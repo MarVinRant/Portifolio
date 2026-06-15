@@ -1,0 +1,127 @@
+/* Importando uma fonte */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    overflow: hidden; /* Impede a rolagem da página */
+    color: white;
+}
+
+/* Fundo borrado da pessoa */
+.background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Cole o caminho da sua imagem borrada aqui */
+    background-image: url('./img/fundo.png');
+    background-color: #c7a7a3; /* Cor de fallback caso a imagem não carregue */
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+/* Barra de navegação */
+.navbar {
+    position: absolute;
+    top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    z-index: 10;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: white;
+    padding: 6px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+/* Estilos específicos de cada botão */
+.nav-item.active {
+    color: white;
+    font-weight: 300;
+    border: 1px solid white;
+}
+
+.nav-item.solid {
+    background-color: #d1bfae; /* Cor bege do botão home */
+    color: #4a403a;
+    font-weight: 600;
+}
+
+.nav-item.thin {
+    border: 1px solid white;
+    font-weight: 300;
+}
+
+.nav-item:hover {
+    transform: scale(1.05);
+}
+
+/* Container principal da área de trabalho */
+.desktop {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Estilo dos ícones */
+.icon {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90px;
+    cursor: grab;
+}
+
+.icon:active {
+    cursor: grabbing;
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-bottom: 5px;
+    pointer-events: none; /* Previne bugs na hora de arrastar com o mouse */
+}
+
+/* Miniaturas de fotos têm cantos retos e sombra */
+.img-thumbnail {
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.icon span {
+    font-size: 0.85rem;
+    text-align: center;
+    /* Sombra no texto para garantir leitura em cima do fundo claro/escuro */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    user-select: none;
+}
+
+/* 2. Adicione este código novo no final do seu CSS para estilizar o mouse */
+.custom-cursor {
+    position: absolute;
+    width: 25px; /* Define o tamanho do cursor */
+    /* Posição simulando o clique no canto inferior direito do botão */
+    bottom: -8px; 
+    right: -8px; 
+    /* Isso impede que a imagem do mouse "bloqueie" o seu clique real no botão */
+    pointer-events: none; 
+    z-index: 20;
+}
