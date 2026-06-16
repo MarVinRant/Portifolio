@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Meu Portfólio</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" href="./img-logo/logo-marcos.png" type="image/png">
+</head>
+<body class="page-contato">
+    
+    <div class="background-blur"></div>
+
+    <nav class="navbar">
+        <a href="./index.html" class="nav-item thin">Home</a>
+        <a href="./exemplos.html" class="nav-item thin">Exemplos</a>
+        <a href="./contatos.html" class="nav-item solid">
+            Contato
+            <img src="./img-logo/cursor.png" alt="Cursor do mouse" class="custom-cursor">
+        </a>
+    </nav>
+
+    <main class="contact-container">
+        <div class="contact-card">
+            <h2>Vamos iniciar seu projeto?</h2>
+            
+            <form id="whatsapp-form">
+                <div class="input-group">
+                    <label for="nome">Como posso te chamar?</label>
+                    <input type="text" id="nome" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="whatsapp">Seu WhatsApp</label>
+                    <input type="tel" id="whatsapp" placeholder="(11) 99999-9999" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="projeto">Qual o seu projeto?</label>
+                    <select id="projeto" required>
+                        <option value="" disabled selected>Selecione uma opção</option>
+                        <option value="Landing Page">Landing Page</option>
+                        <option value="Site Institucional">Site Institucional</option>
+                        <option value="E-commerce">E-commerce</option>
+                        <option value="Sistema Sob Medida">Sistema Sob Medida</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-submit">Enviar mensagem</button>
+            </form>
+            
+            <p class="disclaimer">Seus dados não serão compartilhados. Atendimento rápido via WhatsApp.</p>
+        </div>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
