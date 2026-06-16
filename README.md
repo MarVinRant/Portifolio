@@ -34,7 +34,7 @@ Para provar o domínio dos fundamentos web, este portfólio foi inteiramente con
 Desenvolvedor Front-end e Web Designer especializado em criar pontes entre grandes ideias e resultados no mundo digital.
 
 * [LinkedIn](https://www.linkedin.com/in/marcos-rantigueri-4012b522b/)
-* [E-mail]("mailto:marcosranti@gmail.com?subject=Vim%20pelo%20GitHub.&body=Ol%C3%A1!%20Me%20Chamo...">)
+* [E-mail](mailto:marcosranti@gmail.com?subject=Vim%20pelo%20GitHub.&body=Ol%C3%A1!%20Me%20Chamo...)
 * [WhatsApp](https://wa.me/5511987291623)
 
 ---
