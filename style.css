@@ -1,4 +1,4 @@
-/* Importando uma fonte */
+/* Importação das fontes do projeto */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
 
@@ -11,11 +11,11 @@
 body {
     font-family: 'Inter', sans-serif;
     height: 100vh;
-    overflow: hidden; /* Impede a rolagem da página */
+    overflow: hidden; /* Corta a barra de rolagem pra Home parecer um desktop fixo */
     color: white;
 }
 
-/* Fundo borrado da pessoa */
+/* Imagem de Fundo Borrada */
 .background-blur {
     position: absolute;
     top: 0;
@@ -23,16 +23,16 @@ body {
     width: 100%;
     height: 100%;
 
-    /* AJUSTE AQUI: O linear-gradient aplica a máscara negra (60% de opacidade) por cima da foto */
+    /* O linear-gradient serve como uma película escura (60% de opacidade) por cima da foto da pessoa */
     background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./img/fundo.png');
     
-    background-color: #c7a7a3; /* Cor de fallback caso a imagem não carregue */
+    background-color: #c7a7a3; /* Cor de segurança caso o link da imagem quebre */
     background-size: cover;
     background-position: center;
     z-index: -1;
 }
 
-/* Barra de navegação */
+/* Menu de Navegação */
 .navbar {
     position: absolute;
     top: 30px;
@@ -53,17 +53,17 @@ body {
     position: relative;
 }
 
-/* Estilos específicos de cada botão */
+/* Estilos visuais de cada botão do menu */
 .nav-item.active {
     color: white;
     font-weight: 300;
     border: 1px solid white;
 }
 
-/* Botão ativo no menu superior */
+/* Botão com destaque cheio (página atual) */
 .nav-item.solid {
-    background-color: #2c3e50; /* Cinza escuro/Azul marinho */
-    color: #ffffff; /* Texto branco */
+    background-color: #2c3e50; 
+    color: #ffffff; 
     font-weight: 600;
     border: 1px solid #2c3e50;
 }
@@ -77,14 +77,14 @@ body {
     transform: scale(1.05);
 }
 
-/* Container principal da área de trabalho */
+/* Área de trabalho dos ícones */
 .desktop {
     position: relative;
     width: 100%;
     height: 100vh;
 }
 
-/* Estilo dos ícones */
+/* Configuração geral dos ícones */
 .icon {
     position: absolute;
     display: flex;
@@ -103,10 +103,10 @@ body {
     height: 50px;
     object-fit: cover;
     margin-bottom: 5px;
-    pointer-events: none; /* Previne bugs na hora de arrastar com o mouse */
+    pointer-events: none; /* Bloqueia a imagem pra não bugar o clique e o arrastar do mouse */
 }
 
-/* Miniaturas de fotos têm cantos retos e sombra */
+/* Sombrinha sutil para miniaturas */
 .img-thumbnail {
     box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
 }
@@ -114,56 +114,48 @@ body {
 .icon span {
     font-size: 0.85rem;
     text-align: center;
-    /* Sombra no texto para garantir leitura em cima do fundo claro/escuro */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Sombra preta pra dar leitura em fundos claros */
     user-select: none;
 }
 
-/* 2. Adicione este código novo no final do seu CSS para estilizar o mouse */
+/* Imagem do cursor customizado simulando o clique */
 .custom-cursor {
     position: absolute;
-    width: 25px; /* Define o tamanho do cursor */
-    /* Posição simulando o clique no canto inferior direito do botão */
+    width: 25px; 
     bottom: -8px; 
     right: -8px; 
-    /* Isso impede que a imagem do mouse "bloqueie" o seu clique real no botão */
-    pointer-events: none; 
+    pointer-events: none; /* Deixa o clique passar direto pro botão real debaixo dele */
     z-index: 20;
 }
 
-/* --- ESTILOS EXCLUSIVOS DA PÁGINA DE EXEMPLOS --- */
-
-/* Importando a fonte elegante para os títulos */
+/* --- ESTILOS DA GALERIA DE EXEMPLOS --- */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&display=swap');
 
-/* Fundo da página (Azul pastel) */
 .page-exemplos {
-    background-color: #aebfd1; /* Azul-pastel acinzentado */
-    overflow-y: auto; 
+    background-color: #aebfd1; /* Azul pastel acinzentado */
+    overflow-y: auto; /* Aqui precisa de scroll para ver os cartões */
     height: auto;
     min-height: 100vh;
     padding-bottom: 80px;
     background-image: url("https://www.transparenttextures.com/patterns/stucco.png"); 
 }
 
-/* Título principal */
 .header-exemplos {
     text-align: center;
-    margin-top: 140px; /* Espaço para o menu */
+    margin-top: 140px; 
     margin-bottom: 70px;
 }
 
-/* Textos da página mais escuros para dar leitura */
 .header-exemplos h1 {
     font-family: 'Playfair Display', serif;
     font-size: 4.5rem;
     font-weight: 400;
     line-height: 1.1;
-    color: #2c3e50; /* Cinza escuro/Azul marinho */
+    color: #2c3e50; 
     letter-spacing: -1px;
 }
 
-/* Layout das 3 colunas */
+/* Grid/Alinhamento dos blocos de pastas */
 .folders-container {
     display: flex;
     justify-content: center;
@@ -172,7 +164,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    flex-wrap: wrap; /* Se a tela for pequena, elas vão para a linha de baixo */
+    flex-wrap: wrap; 
 }
 
 .folder-card {
@@ -182,37 +174,35 @@ body {
     align-items: center;
 }
 
-/* Desenhando a Pasta com a nova cor (Cinza claro) */
+/* Corpo físico da Pasta */
 .folder-graphic {
     width: 100%;
     height: 380px;
     background-color: #d1d5db;
-    /* AJUSTE AQUI: O segundo valor agora é 0 (canto superior direito reto) */
-    border-radius: 10px 0 5px 5px; 
+    border-radius: 10px 0 5px 5px; /* Canto superior direito reto pra emendar na aba */
     position: relative;
     margin-bottom: 30px;
     box-shadow: 0px 10px 20px rgba(0,0,0,0.15);
 }
 
-/* A abinha da pasta (Cinza claro) */
+/* Aba superior da pasta */
 .folder-graphic::before {
     content: '';
     position: absolute;
-    /* AJUSTE AQUI: Mantemos o topo em -15px, mas aumentamos a altura para 16px */
     top: -15px; 
     right: 0;
     width: 100px;
-    height: 16px; /* Esse 1px a mais faz a aba "invadir" a caixa e selar a emenda */
+    height: 16px; /* 1px a mais de altura pra morder o bloco de baixo e tirar emendas feias */
     background-color: #d1d5db; 
     border-radius: 10px 10px 0 0;
 }
 
-/* Estilo Base da Foto Polaroid */
+/* Moldura das Fotos Polaroid */
 .polaroid {
     position: absolute;
     background: #fff;
-    padding: 8px; /* Borda branca ao redor da foto */
-    padding-bottom: 28px; /* Espaço maior embaixo reservado para a legenda */
+    padding: 8px; 
+    padding-bottom: 28px; /* Espaço maior reservado pra legenda manuscrita */
     box-shadow: 2px 4px 12px rgba(0,0,0,0.25);
     transition: transform 0.3s ease;
 }
@@ -229,43 +219,40 @@ body {
     object-fit: cover;
 }
 
-/* Texto da Legenda (Estilo Escrita à Mão) */
+/* Legenda da Polaroid (Fonte estilo caneta) */
 .polaroid-legenda {
     position: absolute;
     bottom: 6px; 
     left: 0;
     width: 100%;
     text-align: center;
-    font-size: 1.3rem; /* Aumentado para compensar a fonte manuscrita */
+    font-size: 1.3rem; 
     font-weight: 600;
-    color: #1a252f; /* Um tom bem escuro, quase como tinta de caneta preta/azul marinho */
-    font-family: 'Caveat', cursive; /* A nova fonte mágica */
+    color: #1a252f; 
+    font-family: 'Caveat', cursive; 
     margin: 0;
-    transform: rotate(-1deg); /* Um leve tortinho para dar realismo */
+    transform: rotate(-1deg); /* Deixa levemente torto pra parecer real */
 }
 
-/* Espalhando as fotos da Pasta 1 */
+/* Posições exatas espalhadas das Polaroids (Pastas 1, 2 e 3) */
 .p1-1 { top: 20px; left: -10px; width: 130px; transform: rotate(-8deg); z-index: 1;}
 .p1-2 { top: 60px; right: -5px; width: 120px; transform: rotate(12deg); z-index: 2; }
 .p1-3 { bottom: 40px; left: 10px; width: 140px; transform: rotate(-5deg); z-index: 3; }
 .p1-4 { bottom: 10px; right: 20px; width: 110px; transform: rotate(8deg); z-index: 4; }
 .p1-5 { top: 120px; left: 60px; width: 130px; transform: rotate(-2deg); z-index: 5; }
 
-/* Espalhando as fotos da Pasta 2 (Desgrudadas) */
 .p2-1 { top: 20px; left: -10px; width: 120px; transform: rotate(-10deg); z-index: 1;}
 .p2-2 { top: 40px; right: -5px; width: 130px; transform: rotate(8deg); z-index: 2; }
 .p2-3 { top: 160px; left: 30px; width: 140px; transform: rotate(2deg); z-index: 5; }
 .p2-4 { bottom: 20px; left: -10px; width: 120px; transform: rotate(-8deg); z-index: 3; }
 .p2-5 { bottom: 30px; right: 5px; width: 130px; transform: rotate(5deg); z-index: 4; }
 
-/* Espalhando as fotos da Pasta 3 (Sem vazar na direita) */
 .p3-1 { top: 20px; left: 10px; width: 120px; transform: rotate(-8deg); z-index: 1;}
 .p3-2 { top: 40px; right: 10px; width: 120px; transform: rotate(12deg); z-index: 2;}
 .p3-3 { top: 150px; left: -15px; width: 130px; transform: rotate(-5deg); z-index: 3;}
 .p3-4 { bottom: 20px; right: 15px; width: 140px; transform: rotate(6deg); z-index: 4;}
 .p3-5 { bottom: 40px; left: 20px; width: 120px; transform: rotate(-2deg); z-index: 5;}
 
-/* Textos debaixo da pasta */
 .folder-text {
     text-align: center;
 }
@@ -274,19 +261,18 @@ body {
     font-family: 'Playfair Display', serif;
     font-size: 2.2rem;
     font-weight: 400;
-    color: #2c3e50; /* Cinza escuro */
+    color: #2c3e50; 
     margin-bottom: 12px;
 }
 
 .folder-text p {
     font-size: 0.95rem;
-    color: #4a5568; /* Cinza médio */
+    color: #4a5568; 
     line-height: 1.5;
     font-weight: 400;
 }
 
-/* --- ESTILOS EXCLUSIVOS DA PÁGINA DE CONTATO --- */
-
+/* --- ESTILOS DA PÁGINA DE CONTATO --- */
 .page-contato {
     overflow: hidden;
 }
@@ -296,7 +282,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    padding-top: 50px; /* Compensa o espaço da navbar */
+    padding-top: 50px; 
 }
 
 .contact-card {
@@ -312,7 +298,7 @@ body {
 
 .contact-card h2 {
     font-family: 'Playfair Display', serif;
-    color: #5c433b; /* Marrom escuro elegante */
+    color: #5c433b; /* Marronzinho elegante */
     font-size: 2.2rem;
     font-weight: 400;
     margin-bottom: 30px;
@@ -348,11 +334,10 @@ body {
     border-color: #aebfd1;
 }
 
-/* Botão principal do formulário */
 .btn-submit {
     width: 100%;
-    background-color: #aebfd1; /* Azul-pastel da nova paleta */
-    color: #2c3e50; /* Texto escuro para dar contraste e leitura */
+    background-color: #aebfd1; 
+    color: #2c3e50; 
     font-size: 1.1rem;
     font-weight: 600;
     padding: 15px;
@@ -363,9 +348,8 @@ body {
     margin-top: 10px;
 }
 
-/* Efeito ao passar o mouse por cima do botão */
 .btn-submit:hover {
-    background-color: #92a8bf; /* Um azul pastel levemente mais escuro */
+    background-color: #92a8bf; 
     transform: translateY(-2px);
 }
 
@@ -375,62 +359,127 @@ body {
     margin-top: 20px;
 }
 
-/* Texto da Home */
+/* Texto Hero Central da Home */
 .hero-text {
     text-align: center;
     position: absolute;
-    /* AJUSTE AQUI: Mudando para 50% desce o texto exatamente para o meio da tela */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); 
+    transform: translate(-50%, -50%); /* Técnica pra travar o elemento exatamente no meio da tela */
     width: 90%;
     max-width: 650px; 
-    z-index: 15; /* Garante que fique SEMPRE na frente dos ícones */
-    pointer-events: none; /* Permite arrastar ícones que passem por trás do texto */
+    z-index: 15; 
+    pointer-events: none; 
 }
 
 .hero-text h1 {
     font-family: 'Playfair Display', serif;
     font-size: 3rem;
     font-weight: 400;
-    /* AJUSTE AQUI: Texto branco para dar contraste */
     color: #ffffff; 
     margin-bottom: 15px;
     line-height: 1.1;
-    /* Sombra para destacar as letras do fundo */
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.6); 
 }
 
 .hero-text p {
     font-size: 1.1rem;
-    /* AJUSTE AQUI: Cinza bem clarinho para leitura agradável */
     color: #e2e8f0; 
     line-height: 1.6;
     font-weight: 300;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
 
-/* --- Destaque do Logo Principal na Home --- */
+/* Destaque circular do Logo Principal */
 .logo-destaque {
-    width: 100px !important;  /* Dobro do tamanho dos ícones normais */
+    width: 100px !important;  
     height: 100px !important;
-    border-radius: 50%;       /* Deixa perfeitamente redondo */
-    object-fit: cover;        /* Impede que a imagem amasse */
-    
-    /* Borda azul-pastel e sombra para destacar bem do fundo escuro */
+    border-radius: 50%;       
+    object-fit: cover;        
     border: 3px solid #aebfd1; 
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.5); 
     margin-bottom: 5px;
 }
 
-/* --- Linha de separação do título na Home --- */
+/* Linha curtinha decorativa do título */
 .title-separator {
-    width: 80px; /* Deixa a linha curtinha e elegante, não atravessa a tela toda */
-    height: 3px; /* Espessura da linha */
-    background-color: #aebfd1; /* O Azul-pastel da sua paleta */
-    border: none; /* Remove a borda padrão feia do HTML */
-    border-radius: 5px; /* Deixa as pontinhas da linha arredondadas */
-    
-    /* O '0 auto' centraliza a linha. O '20px' dá um respiro antes do parágrafo */
+    width: 80px; 
+    height: 3px; 
+    background-color: #aebfd1; 
+    border: none; 
+    border-radius: 5px; 
     margin: 0 auto 20px auto; 
+}
+
+/* ========================================= */
+/* --- SEÇÃO DE CONFIGURAÇÃO DO CELULAR (RESPONSIVO) --- */
+/* ========================================= */
+
+@media screen and (max-width: 768px) {
+    /* Ajustes da Navbar pra não embolar no mobile */
+    .navbar {
+        flex-wrap: wrap;
+        top: 15px;
+        gap: 10px;
+        padding: 0 10px;
+    }
+
+    .nav-item {
+        font-size: 0.9rem;
+        padding: 6px 15px;
+    }
+
+    /* Ajuste de escala do texto principal da Home */
+    .hero-text {
+        top: 60%; /* Joga o texto um tiquinho mais pra baixo abrindo espaço pro logo fixo */
+        width: 85%;
+    }
+
+    .hero-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-text p {
+        font-size: 0.9rem;
+    }
+
+    /* Reduzindo o diâmetro da logo no mobile pra harmonizar com as fontes */
+    .logo-destaque {
+        width: 80px !important;
+        height: 80px !important;
+    }
+
+    /* Ajustes das pastas na página de Exemplos */
+    .header-exemplos {
+        margin-top: 110px;
+        margin-bottom: 40px;
+    }
+
+    .header-exemplos h1 {
+        font-size: 2.8rem;
+    }
+
+    .folders-container {
+        gap: 40px; 
+    }
+
+    .folder-card {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    /* Ajustes da caixinha da página de Contato */
+    .contact-container {
+        padding-top: 80px; 
+    }
+
+    .contact-card {
+        width: 90%;
+        padding: 30px 20px;
+        margin-top: 20px;
+    }
+
+    .contact-card h2 {
+        font-size: 1.8rem;
+    }
 }

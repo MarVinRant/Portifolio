@@ -1,59 +1,62 @@
 const draggables = document.querySelectorAll('.draggable');
 
-// --- 1. Lógica para Espalhar Aleatoriamente (Com Área Livre no Centro) ---
-function randomizeIcons() {
-    const safeTopMargin = 100; // Margem do menu superior
-    const iconWidth = 90; 
-    const iconHeight = 110; 
+// --- 1. Alinhamento inicial dos ícones na Home (Estilo Dock) ---
+function positionIcons() {
+    const isMobile = window.innerWidth <= 768;
 
-    // Calcula o espaço total útil da tela
-    const maxLeft = window.innerWidth - iconWidth;
-    const maxTop = window.innerHeight - iconHeight;
-
-    // Define o tamanho da "Zona Proibida" no centro (onde fica o texto)
-    const blockWidth = 750; // Margem de segurança horizontal
-    const blockHeight = 350; // Margem de segurança vertical
-    
-    // Calcula as coordenadas exatas desse quadrado invisível no meio da tela
-    const minX = (window.innerWidth / 2) - (blockWidth / 2);
-    const maxX = (window.innerWidth / 2) + (blockWidth / 2);
-    const minY = (window.innerHeight / 2) - (blockHeight / 2);
-    const maxY = (window.innerHeight / 2) + (blockHeight / 2);
-
-    draggables.forEach(icon => {
-        let randomLeft, randomTop;
-        let caiuNoCentro = true;
-        let tentativas = 0;
-
-        // O código vai sortear posições repetidamente até achar uma livre
-        while (caiuNoCentro && tentativas < 100) {
-            randomLeft = Math.floor(Math.random() * maxLeft);
-            randomTop = Math.floor(Math.random() * (maxTop - safeTopMargin)) + safeTopMargin;
-
-            // Verifica se a posição sorteada invadiu a zona proibida
-            if (
-                randomLeft + iconWidth > minX && randomLeft < maxX &&
-                randomTop + iconHeight > minY && randomTop < maxY
-            ) {
-                caiuNoCentro = true; // Bateu no texto, sorteia de novo
+    if (isMobile) {
+        // No celular, deixa só a logo principal centralizada no topo e esconde o resto
+        draggables.forEach(icon => {
+            if (icon.querySelector('.logo-destaque')) {
+                icon.style.display = 'flex';
+                icon.style.left = '50%';
+                icon.style.top = '110px'; 
+                icon.style.transform = 'translateX(-50%)';
             } else {
-                caiuNoCentro = false; // Achou um espaço nas bordas!
+                icon.style.display = 'none'; 
             }
-            tentativas++;
-        }
+        });
+        return; 
+    }
 
-        // Aplica as posições finais nas bordas
-        icon.style.left = `${randomLeft}px`;
-        icon.style.top = `${randomTop}px`;
+    // --- Configuração para PC (Desktop) ---
+    // Filtro maroto: se eu esquecer de apagar os outros ícones do HTML, o JS esconde e só usa os 4 principais
+    const visibleIcons = Array.from(draggables).filter(icon => {
+        const text = icon.querySelector('span').innerText.toLowerCase();
+        const isMain = text.includes('rantech') || text.includes('html') || text.includes('css') || text.includes('java');
+        if (!isMain) {
+            icon.style.display = 'none';
+        }
+        return isMain;
+    });
+
+    const iconWidth = 90;
+    const gap = 25; // Espaçamento entre um ícone e outro na fileira de baixo
+    const totalWidth = (visibleIcons.length * iconWidth) + ((visibleIcons.length - 1) * gap);
+    
+    // Calcula onde começar a desenhar a fileira pra ficar perfeitamente centralizada na horizontal
+    let startLeft = (window.innerWidth / 2) - (totalWidth / 2);
+    const bottomMargin = 140; // Altura em relação ao rodapé da página (ajustar aqui se quiser mais alto ou baixo)
+    const initialTop = window.innerHeight - bottomMargin;
+
+    visibleIcons.forEach((icon, index) => {
+        icon.style.display = 'flex';
+        icon.style.transform = ''; // Tira o efeito de centralizar do mobile se voltar pro PC
+        
+        // Só mexe na posição de início se o usuário ainda não tiver arrastado o ícone com o mouse
+        if (!icon.dataset.dragged) {
+            icon.style.left = `${startLeft + (index * (iconWidth + gap))}px`;
+            icon.style.top = `${initialTop}px`;
+        }
     });
 }
 
-// O BUG ESTAVA AQUI: Faltou mandar a função rodar quando a página carrega!
-window.addEventListener('load', randomizeIcons);
-window.addEventListener('resize', randomizeIcons);
+// Rodar sempre que a página carregar ou mudar de tamanho
+window.addEventListener('load', positionIcons);
+window.addEventListener('resize', positionIcons);
 
 
-// --- 2. Lógica de Arrastar ---
+// --- 2. Sistema de arrastar os ícones (Exclusivo para o PC) ---
 draggables.forEach(icon => {
     let isDragging = false;
     let startX, startY, initialX, initialY;
@@ -65,7 +68,8 @@ draggables.forEach(icon => {
         initialX = icon.offsetLeft;
         initialY = icon.offsetTop;
         
-        icon.style.zIndex = 1000; 
+        icon.style.zIndex = 1000; // Joga pra frente de tudo na hora do arraste
+        icon.dataset.dragged = "true"; // Trava a posição pra não dar reset caso a janela mude de tamanho
     });
 
     document.addEventListener('mousemove', (e) => {
@@ -87,7 +91,7 @@ draggables.forEach(icon => {
 });
 
 
-// --- 3. Lógica do Formulário de Contato (WhatsApp) ---
+// --- 3. Envio do Formulário direto pro WhatsApp ---
 const contactForm = document.getElementById('whatsapp-form');
 
 if (contactForm) {
@@ -98,7 +102,7 @@ if (contactForm) {
         const whatsapp = document.getElementById('whatsapp').value;
         const projeto = document.getElementById('projeto').value;
 
-        // Lembre-se de colocar o seu número aqui!
+        // MEU NÚMERO DE CONTATO: Lembrar de atualizar o DDD caso mude de chip no futuro
         const meuNumero = "5511987291623"; 
         
         const mensagem = `Olá Marcos! Meu nome é ${nome}. Estive olhando o seu portfólio e tenho interesse em desenvolver um(a) ${projeto}. Meu número de contato é ${whatsapp}. Podemos conversar sobre um orçamento?`;
@@ -108,20 +112,20 @@ if (contactForm) {
     });
 }
 
-// --- 4. Máscara do campo de WhatsApp ---
+// --- 4. Máscara de formatação do número de celular ---
 const inputWhatsapp = document.getElementById('whatsapp');
 
 if (inputWhatsapp) {
     inputWhatsapp.addEventListener('input', function (e) {
-        let value = e.target.value.replace(/\D/g, ''); 
+        let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não for número
         
         if (value.length > 0) {
-            value = value.replace(/^(\d{2})(\d)/g, '($1) $2'); 
+            value = value.replace(/^(\d{2})(\d)/g, '($1) $2'); // Coloca os parênteses no DDD
         }
         if (value.length > 9) {
-            value = value.replace(/(\d{5})(\d)/, '$1-$2'); 
+            value = value.replace(/(\d{5})(\d)/, '$1-$2'); // Tracinho do celular
         }
         
-        e.target.value = value.substring(0, 15);
+        e.target.value = value.substring(0, 15); // Trava no limite de caracteres do formato
     });
 }
