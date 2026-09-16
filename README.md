@@ -1,41 +1,52 @@
-# 🚀 Meu Portfólio Digital - RanTech
+# Marcos Rantigueri — Portfólio
 
-## 📖 Sobre o Projeto
-Bem-vindo ao meu portfólio digital! Este projeto foi desenvolvido para ser muito mais do que um simples currículo online; ele é uma experiência interativa que demonstra na prática o meu domínio sobre desenvolvimento Front-End, Design de Interfaces (UI) e Experiência do Usuário (UX).
+Desenvolvedor web em início de carreira, com foco em transformar problemas reais de negócios em produtos digitais, automações e experiências claras.
 
-A página principal conta com uma interface inspirada em sistemas operacionais (como o Dock), onde o visitante pode interagir livremente com os elementos da tela. Cada detalhe foi pensado para transmitir inovação, profissionalismo e alta performance.
+Este repositório contém meu portfólio pessoal: uma experiência web responsiva construída com fundamentos sólidos de HTML, CSS e JavaScript, incluindo navegação interativa, galeria de projetos e contato orientado à conversão.
 
-## 🔗 Visualização ao Vivo
-Sinta a interatividade na prática:
-[Acessar o Meu Portfólio](https://marvinrant.github.io/Portifolio/)
+## Acesse
 
----
+- **Portfólio:** [marvinrant.github.io/Portifolio](https://marvinrant.github.io/Portifolio/)
+- **LinkedIn:** [Marcos Rantigueri](https://www.linkedin.com/in/marcos-rantigueri/)
+- **RanTech Platform:** [rantech-platform.vercel.app](https://rantech-platform.vercel.app/)
 
-## ✨ Principais Funcionalidades
-* **Interface Interativa (Drag and Drop):** No desktop, os ícones das tecnologias funcionam como elementos fluidos que o usuário pode clicar e arrastar livremente pela tela, criando uma experiência lúdica e memorável.
-* **Layout Inteligente (Estilo Dock):** Um sistema dinâmico em JavaScript que calcula o tamanho da tela e centraliza perfeitamente a *tech stack* na parte inferior, garantindo que o texto principal nunca seja obstruído.
-* **Responsividade Cirúrgica:** No mobile, a interatividade pesada dá lugar a um design minimalista, limpo e direto ao ponto, priorizando a leitura e a velocidade de carregamento em smartphones.
-* **Galeria de Projetos (Polaroids):** Uma seção de "Exemplos" com design criativo, organizando as landing pages em pastas com miniaturas em estilo polaroid, divididas por nicho de mercado.
-* **Formulário Dinâmico via WhatsApp:** Uma página de contato elegante que captura os dados do cliente (com máscara de formatação automática para celular) e redireciona o orçamento formatado diretamente para o meu WhatsApp.
+## O que este projeto demonstra
 
----
+- Interface responsiva com experiências distintas para desktop e mobile;
+- Manipulação de DOM, eventos de mouse e toque e interações de arrastar e soltar;
+- Layout inspirado em dock, glassmorphism, variáveis CSS, Grid e Flexbox;
+- Galeria organizada de landing pages e projetos por contexto de negócio;
+- Formulário de contato com fluxo direcionado ao WhatsApp;
+- Desenvolvimento sem framework, com atenção a semântica, performance e manutenção.
 
-## 🛠️ Tecnologias Utilizadas
-Para provar o domínio dos fundamentos web, este portfólio foi inteiramente construído "na unha" (Vanilla), garantindo performance extrema e controle absoluto de cada pixel, sem depender de bibliotecas ou frameworks externos:
+## Tecnologia
 
-* **HTML5:** Semântica estruturada e código limpo.
-* **CSS3:** Animações fluidas, efeitos de Glassmorphism (fundo borrado), cursores customizados, variáveis de cor, Grid e Flexbox Layout.
-* **JavaScript (Vanilla):** Manipulação avançada do DOM, eventos de mouse/touch para o Drag and Drop, lógica matemática de posicionamento de tela e tratamento de strings no formulário.
+- HTML5 semântico
+- CSS3, responsividade, animações, Grid e Flexbox
+- JavaScript Vanilla, DOM e eventos de interação
+- GitHub Pages para publicação
 
----
+## Projetos em destaque
 
-## 👨‍💻 Desenvolvedor
-**Marcos Rantigueri (RanTech)**
-Desenvolvedor Front-end e Web Designer especializado em criar pontes entre grandes ideias e resultados no mundo digital.
+O portfólio reúne trabalhos de interface, produtos e automações desenvolvidos no ecossistema RanTech. Entre os projetos técnicos documentados estão:
 
-* [LinkedIn](https://www.linkedin.com/in/marcos-rantigueri-4012b522b/)
-* [E-mail](mailto:marcosranti@gmail.com?subject=Vim%20pelo%20GitHub.&body=Ol%C3%A1!%20Me%20Chamo...)
-* [WhatsApp](https://wa.me/5511987291623)
+- [RanTech Platform](https://github.com/MarVinRant/rantech-platform) — experiência institucional e diagnóstico comercial;
+- [Lead Intelligence](https://github.com/MarVinRant/Lead-Inteligence) — inteligência, scoring e organização de leads;
+- [Agents-RanTech](https://github.com/MarVinRant/Agents-RanTech) — agentes, atendimento e automações;
+- [Tropical III](https://github.com/MarVinRant/Tropical-III) — entrega digital para cliente real;
+- [Rango da Hora](https://github.com/MarVinRant/Rango-da-Hora) — presença digital para negócio de alimentação.
 
----
-*Transformando ideias em experiências digitais modernas, rápidas e funcionais.*
+## Estrutura
+
+- `index.html` — experiência principal;
+- `exemplos.html` — galeria de projetos;
+- `contatos.html` — contato;
+- `style.css` — identidade visual e responsividade;
+- `scripts.js` — interações e comportamento;
+- `img/` e `img-logo/` — imagens e identidade visual.
+
+## Sobre mim
+
+Sou Marcos Rantigueri, desenvolvedor web com interesse em front-end, automação, IA aplicada e construção de soluções digitais para negócios reais. A RanTech funciona como meu laboratório de produtos, documentação e experimentação.
+
+> Este portfólio evolui junto com os projetos: a interface mostra os fundamentos; os repositórios relacionados mostram a evolução para produtos, dados, automações e arquitetura.
