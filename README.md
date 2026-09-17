@@ -2,7 +2,7 @@
 
 Desenvolvedor web em início de carreira, com foco em transformar problemas reais de negócios em produtos digitais, automações e experiências claras.
 
-Este repositório contém meu portfólio pessoal: uma experiência web responsiva construída com fundamentos sólidos de HTML, CSS e JavaScript, incluindo navegação interativa, galeria de projetos e contato orientado à conversão.
+Este repositório contém meu portfólio pessoal: uma experiência web responsiva construída com HTML, CSS e JavaScript, com navegação interativa, seleção de projetos e contato orientado à conversão.
 
 ## Acesse
 
@@ -15,8 +15,7 @@ Este repositório contém meu portfólio pessoal: uma experiência web responsiv
 - Interface responsiva com experiências distintas para desktop e mobile;
 - Manipulação de DOM, eventos de mouse e toque e interações de arrastar e soltar;
 - Layout inspirado em dock, glassmorphism, variáveis CSS, Grid e Flexbox;
-- Galeria organizada de landing pages e projetos por contexto de negócio;
-- Formulário de contato com fluxo direcionado ao WhatsApp;
+- Galeria organizada de projetos por contexto de negócio;
 - Desenvolvimento sem framework, com atenção a semântica, performance e manutenção.
 
 ## Tecnologia
@@ -28,13 +27,13 @@ Este repositório contém meu portfólio pessoal: uma experiência web responsiv
 
 ## Projetos em destaque
 
-O portfólio reúne trabalhos de interface, produtos e automações desenvolvidos no ecossistema RanTech. Entre os projetos técnicos documentados estão:
+O portfólio reúne trabalhos de interface, produtos e automações desenvolvidos no ecossistema RanTech:
 
 - [RanTech Platform](https://github.com/MarVinRant/rantech-platform) — experiência institucional e diagnóstico comercial;
 - [Lead Intelligence](https://github.com/MarVinRant/Lead-Inteligence) — inteligência, scoring e organização de leads;
 - [Agents-RanTech](https://github.com/MarVinRant/Agents-RanTech) — agentes, atendimento e automações;
 - [Tropical III](https://github.com/MarVinRant/Tropical-III) — entrega digital para cliente real;
-- [Rango da Hora](https://github.com/MarVinRant/Rango-da-Hora) — presença digital para negócio de alimentação.
+- [Odonto Plus](https://odonto-plus-kappa.vercel.app/) — experiência digital para odontologia, triagem assistida e jornada de cuidado.
 
 ## Estrutura
 
@@ -48,5 +47,3 @@ O portfólio reúne trabalhos de interface, produtos e automações desenvolvido
 ## Sobre mim
 
 Sou Marcos Rantigueri, desenvolvedor web com interesse em front-end, automação, IA aplicada e construção de soluções digitais para negócios reais. A RanTech funciona como meu laboratório de produtos, documentação e experimentação.
-
-> Este portfólio evolui junto com os projetos: a interface mostra os fundamentos; os repositórios relacionados mostram a evolução para produtos, dados, automações e arquitetura.
