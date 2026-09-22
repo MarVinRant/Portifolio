@@ -108,3 +108,80 @@ p { color: var(--muted); margin: 0 0 1rem; }
   .section-copy { margin-top: 30px; }
   .site-footer { padding-left: 20px; padding-right: 20px; }
 }
+
+
+/* Interactive polish: preserve the editorial RanTech identity while making primary actions feel responsive and intentional. */
+.header-actions { align-items: center; display: flex; gap: 10px; }
+.theme-toggle {
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-size: .72rem;
+  padding: 7px 12px;
+  transition: transform .22s ease, border-color .22s ease, background .22s ease;
+}
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  background: var(--surface-2);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+.button {
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
+  transition: transform .22s ease, box-shadow .22s ease, background .22s ease, border-color .22s ease;
+}
+.button::before {
+  background: linear-gradient(110deg, transparent 30%, rgba(246,242,232,.24) 50%, transparent 70%);
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: translateX(-120%);
+  transition: transform .6s ease;
+  z-index: -1;
+}
+.button:hover,
+.button:focus-visible {
+  box-shadow: 0 12px 28px rgba(0,0,0,.24);
+  transform: translateY(-3px);
+}
+.button:hover::before,
+.button:focus-visible::before { transform: translateX(120%); }
+.button:focus-visible,
+.theme-toggle:focus-visible,
+.menu-toggle:focus-visible,
+.filter-button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+.button span { display: inline-block; margin-left: 8px; transition: transform .22s ease; }
+.button:hover span,
+.button:focus-visible span { transform: translate(4px,-3px); }
+.button-primary { box-shadow: 0 8px 22px rgba(20,143,199,.25); }
+.button-ghost:hover { border-color: var(--accent); }
+.light-theme {
+  --bg: #F4F0E8;
+  --surface: #FFFAF2;
+  --surface-2: #F0E6D5;
+  --text: #102033;
+  --muted: #536170;
+  --line: #D5C8B4;
+  --accent: #0B789F;
+  --accent-2: #BD8A2E;
+  --gold: #9A6E22;
+}
+.light-theme .site-header { background: rgba(244,240,232,.86); }
+.light-theme .project-card { background: rgba(255,250,242,.82); }
+.light-theme .project-featured { background: linear-gradient(135deg,#E5F2F4,#FFFAF2); }
+.light-theme .button-primary { color: #fff; }
+@media (max-width: 760px) {
+  .header-actions { margin-left: auto; }
+  .theme-toggle { font-size: .68rem; padding: 6px 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .button, .button::before, .button span, .theme-toggle { transition-duration: .01ms !important; }
+}

@@ -1,5 +1,6 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const siteNav = document.querySelector('.site-nav');
+const themeToggle = document.querySelector('.theme-toggle');
 const filterButtons = [...document.querySelectorAll('.filter-button')];
 const projectCards = [...document.querySelectorAll('.project-card')];
 const projectCount = document.querySelector('.project-count');
@@ -7,6 +8,12 @@ const projectCount = document.querySelector('.project-count');
 menuToggle?.addEventListener('click', () => {
   const isOpen = siteNav.classList.toggle('is-open');
   menuToggle.setAttribute('aria-expanded', String(isOpen));
+});
+
+themeToggle?.addEventListener('click', () => {
+  const isLight = document.body.classList.toggle('light-theme');
+  themeToggle.setAttribute('aria-pressed', String(isLight));
+  themeToggle.textContent = isLight ? 'Modo escuro' : 'Modo claro';
 });
 
 siteNav?.querySelectorAll('a').forEach((link) => {

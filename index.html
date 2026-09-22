@@ -11,7 +11,10 @@
   <body>
     <header class="site-header">
       <a class="brand" href="#inicio" aria-label="Voltar ao início">MR<span>.</span></a>
-      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <div class="header-actions">
+        <button class="theme-toggle" type="button" aria-pressed="false">Modo claro</button>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      </div>
       <nav id="site-nav" class="site-nav" aria-label="Navegação principal">
         <a href="#projetos">Projetos</a>
         <a href="#processo">Processo</a>
@@ -28,7 +31,11 @@
             <p class="eyebrow">Desenvolvimento Web · Automação · IA</p>
             <h1>Transformo problemas reais de negócio em <em>produtos digitais.</em></h1>
             <p class="hero-copy">Sou Marcos Rantigueri, desenvolvedor focado em criar interfaces, sistemas e automações que tornam operações mais claras, úteis e preparadas para crescer.</p>
-            <div class="hero-actions"><a class="button button-primary" href="#projetos">Ver projetos</a><a class="button button-ghost" href="https://www.linkedin.com/in/marcos-rantigueri/" target="_blank" rel="noreferrer">Falar comigo ↗</a></div>
+            <div class="hero-actions">
+              <a class="button button-primary" href="#projetos">Ver projetos <span aria-hidden="true">↗</span></a>
+              <a class="button button-ghost" href="https://wa.me/5511987291623" target="_blank" rel="noreferrer" aria-label="Conversar pelo WhatsApp">WhatsApp <span aria-hidden="true">↗</span></a>
+              <a class="button button-ghost" href="https://www.linkedin.com/in/marcos-rantigueri/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
           <aside class="hero-panel" aria-label="Resumo profissional"><span class="panel-label">CURRENT FOCUS</span><strong>Interfaces com contexto.</strong><p>Produto, dados e automação organizados para pessoas tomarem decisões melhores.</p><div class="panel-line"><span></span><small>Disponível para novos projetos</small></div></aside>
         </div>
@@ -49,7 +56,7 @@
 
       <section id="processo" class="section-shell section-block split-section reveal"><div class="section-heading"><p class="eyebrow">Como eu trabalho</p><h2>Clareza antes de complexidade.</h2></div><div class="section-copy"><p>Parto do problema, organizo a informação e só então escolho a tecnologia. O resultado precisa ser útil para pessoas e sustentável para a operação.</p><p>Documentação, automação e melhoria contínua fazem parte da entrega desde o início.</p><div class="process-steps"><span>01 / Entender</span><span>02 / Organizar</span><span>03 / Construir</span></div></div></section>
       <section id="sobre" class="section-shell section-block split-section reveal"><div class="section-heading"><p class="eyebrow">Sobre</p><h2>Desenvolvimento com visão de negócio.</h2></div><div class="section-copy"><p>Minha experiência combina atendimento, suporte, análise de dados, frontend, automação e inteligência artificial aplicada.</p><p>Na RanTech, transformo aprendizados em produtos, experimentos e soluções para negócios reais.</p></div></section>
-      <section id="contato" class="section-shell contact-section reveal"><p class="eyebrow">Próximo passo</p><h2>Tem um problema para organizar?</h2><p>Vamos conversar sobre uma solução digital mais clara, útil e preparada para crescer.</p><a class="button button-primary" href="https://www.linkedin.com/in/marcos-rantigueri/" target="_blank" rel="noreferrer">Entrar em contato ↗</a></section>
+      <section id="contato" class="section-shell contact-section reveal"><p class="eyebrow">Próximo passo</p><h2>Tem um problema para organizar?</h2><p>Vamos conversar sobre uma solução digital mais clara, útil e preparada para crescer.</p><div class="hero-actions"><a class="button button-primary" href="https://wa.me/5511987291623" target="_blank" rel="noreferrer" aria-label="Conversar pelo WhatsApp">WhatsApp <span aria-hidden="true">↗</span></a><a class="button button-ghost" href="https://www.linkedin.com/in/marcos-rantigueri/" target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a></div></section>
     </main>
 
     <footer class="site-footer section-shell"><span>© 2026 Marcos Rantigueri</span><a href="https://github.com/MarVinRant" target="_blank" rel="noreferrer">GitHub ↗</a></footer>
